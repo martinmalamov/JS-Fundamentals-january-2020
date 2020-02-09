@@ -1,0 +1,19 @@
+function TrianlgeNum(n){
+    var s = "";
+    for(i = 1 ; i<= n ;i++){
+            for(j = i; j > 0 ; j--){
+                s += i + " ";
+            }
+            console.log(s)
+            s = s.replace(/[^a-z\.]+/g, "");
+    }
+}
+TrianlgeNum(5)               
+                          //------>>>>>> OR
+ function triangle(n){
+ 
+    for(i = 1 ; i<= n ;i++){
+            console.log(`${i} `.repeat(i));          
+    }   
+}
+triangle(5)
