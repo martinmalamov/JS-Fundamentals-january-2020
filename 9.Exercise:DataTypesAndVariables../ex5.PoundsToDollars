@@ -1,0 +1,6 @@
+function poundsToDollars(pound){
+        let result = pound * 1.31;
+
+        console.log(result.toFixed(3))
+    }
+    poundsToDollars(80)
