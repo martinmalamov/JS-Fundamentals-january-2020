@@ -1,0 +1,12 @@
+function charsToString(char1,char2,char3){
+    let concatenation = '';
+
+    concatenation = (char1 + char2 + char3);
+
+    console.log(concatenation)
+
+}
+charsToString('a','b','c')
+charsToString('%',
+    '2',
+    'o')
