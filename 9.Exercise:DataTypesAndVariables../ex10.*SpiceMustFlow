@@ -1,0 +1,19 @@
+function spice(source){
+    let workersConsume = 26;
+    let countDays = 0;
+    let totalSpice = 0;
+
+    if(source>=100){
+        while(source >= 100){
+        totalSpice += source - workersConsume;
+        source -= 10;
+        countDays++       
+        }
+         if(source < 100){
+        totalSpice-=workersConsume;
+        }
+    }
+    console.log(countDays)
+    console.log(totalSpice)
+}
+spice(11)
