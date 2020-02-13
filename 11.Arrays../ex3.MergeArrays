@@ -1,0 +1,27 @@
+function merge(arr1,arr2){
+    let resultArr = new Array()
+    let sum = 0 ;
+    let str = ''
+
+    for(let i = 0 ; i<arr1.length;i++){
+      {
+
+            if(i % 2 === 0){
+                sum =parseInt( arr1[i]) + parseInt(arr2[i]);
+                resultArr.push(sum)
+            }
+
+            else if(i%2===1){
+                str =  arr1[i].concat(arr2[i]);
+               // resultArr.push(' - '+ str+' - ')
+               resultArr.push( str)
+
+            }
+        }
+    }
+
+    console.log(resultArr.join(' - '))
+}
+merge(['5', '15', '23', '56', '35'],
+['17', '22', '87', '36', '11']
+)
