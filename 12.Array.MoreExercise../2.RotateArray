@@ -1,0 +1,33 @@
+function rotate(array){
+    let newRotateArray = []
+    let lastElementOfArray = array[array.length-1];
+    let numberOfRotate = Number(lastElementOfArray)
+    let isNumber = false;
+
+
+    for(let i = 0; i < array.length-1;i++){
+        newRotateArray.push(array[i])
+        
+    }
+    for(let i = 0; i < numberOfRotate;i++){
+    
+        if(numberOfRotate !== ""){
+            isNumber = true;
+          newRotateArray.unshift(newRotateArray.pop());
+        }
+        else{
+            isNumber = false;
+            break;
+        }
+    }
+    
+    if(isNumber === false){
+        console.log('Empty')
+    }
+    if(isNumber === true){
+        console.log(newRotateArray.join(' '))
+    }
+}
+rotate(['1', '2', '3', '4', '2'])
+rotate(['Banana', 'Orange', 'Coconut', 'Apple', '15'])
+rotate(['remove', 'remove', 'remove'])
