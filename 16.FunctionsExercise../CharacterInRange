@@ -1,0 +1,18 @@
+function CharacterInRange(start,end){
+    let startValue = start.charCodeAt(0)
+    let endValue = end.charCodeAt(0)
+
+    if(endValue < startValue){
+        var temp = endValue;
+        endValue = startValue;
+        startValue = temp
+    }
+
+    let str = ''
+    for(let i =  startValue + 1; i < endValue; i++){
+        str += String.fromCharCode(i) + ' '
+    }
+
+    console.log(str)
+}
+CharacterInRange( 'a', 'd')
