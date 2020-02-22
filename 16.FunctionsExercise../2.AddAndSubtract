@@ -13,3 +13,7 @@ function addOrSubtract(firstNum,secondNum,thirdNum){
    }
     return sumOfFirstAndSecondNumber  
 }
+
+addOrSubtract(23,6,10)
+addOrSubtract(1,17,30)
+addOrSubtract(42,58,100)
