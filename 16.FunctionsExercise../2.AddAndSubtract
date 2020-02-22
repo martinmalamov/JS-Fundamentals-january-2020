@@ -1,0 +1,15 @@
+function addOrSubtract(firstNum,secondNum,thirdNum){
+    let sum = 0;
+    let sumOfFirstAndSecondNumber
+
+    sumOfFirstAndSecNum()
+    let subtractThirdNumber = sumOfFirstAndSecondNumber - thirdNum
+    console.log(subtractThirdNumber)
+
+    function sumOfFirstAndSecNum(){
+    
+         sumOfFirstAndSecondNumber = firstNum + secondNum;
+   
+   }
+    return sumOfFirstAndSecondNumber  
+}
