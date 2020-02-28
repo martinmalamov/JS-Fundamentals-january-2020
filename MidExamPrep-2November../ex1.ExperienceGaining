@@ -1,0 +1,72 @@
+function solve(input) {
+    let amountExperience =parseFloat( input[0])
+    let countOfBattles =parseInt( input[1])
+
+    let experienceFromBattle = 0;
+    let battleCounter = 0;
+    let isTrue = false;
+
+    for (let i = 1; i <= countOfBattles; i++) {
+        battleCounter++
+        let arrOfNumber  = parseFloat(input[i+1])
+
+        if(arrOfNumber >= amountExperience )
+        {
+            experienceFromBattle = arrOfNumber
+            isTrue = true
+            break;
+        }
+
+        
+        if (amountExperience <= experienceFromBattle || amountExperience <= arrOfNumber) {
+            battleCounter--
+            isTrue = true;
+            break;
+        }
+
+        else if (battleCounter % 3 === 0) {
+            experienceFromBattle += arrOfNumber + (arrOfNumber * 0.15)
+            
+        }
+
+        else if (battleCounter % 5 === 0) {
+            experienceFromBattle += arrOfNumber * 0.90
+        }
+
+        else{ 
+            experienceFromBattle +=  arrOfNumber
+        }
+
+    }
+
+
+    if (amountExperience <= experienceFromBattle || isTrue === true) {
+        console.log(`Player successfully collected his needed experience for ${battleCounter} battles.`)
+        
+    }
+    else{
+        let needSum = amountExperience - experienceFromBattle
+        console.log(`Player was not able to collect the needed experience, ${needSum.toFixed(2)} more needed.`)
+    }
+    
+}
+
+solve([
+    '500',
+    '5',
+    '550',
+    '0',
+    '0',
+    '0',
+    '0'
+])
+
+solve([
+    '400',
+    '5',
+    '50',
+    '100',
+    '200',
+    '100',
+    '20'
+])
