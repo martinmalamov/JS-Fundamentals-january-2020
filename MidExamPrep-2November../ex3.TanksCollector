@@ -1,0 +1,95 @@
+function solve(input){
+    let firstLine = input.shift().split(', ')
+   
+    const add = (tankName) =>{
+        if(firstLine.includes(tankName)){
+            console.log("Tank is already bought")
+        }
+        else{
+            console.log("Tank successfully bought")
+            firstLine.push(tankName)
+        }
+    }
+
+    const remove = (tankName)=>{
+        if(firstLine.includes(tankName)){
+            console.log("Tank successfully sold")
+            let indexOfTank =firstLine.indexOf(tankName)
+            firstLine.splice(indexOfTank,1)
+        }
+        else{
+            console.log("Tank not found")
+        }
+    }   
+
+    const removeAt = (index)=>{
+        if(index > 0 && index <=firstLine[index]){
+           // let indexOfTank =firstLine.indexOf(index)
+            //firstLine.splice(indexOfTank,1)
+            firstLine.splice(index,1)
+            console.log("Tank successfully sold")
+        }
+        else{
+            console.log("Index out of range")
+        }
+    }   
+
+    const insert = (index,tankName)=>{
+        if(index > 0 && index <= firstLine[index]){
+            if(firstLine.includes(tankName)){
+                console.log("Tank is already bought")
+            }
+            else if(!firstLine.includes(tankName)){
+                firstLine.splice(index,0,tankName)
+                console.log("Tank successfully bought")
+            }
+           
+        }
+        else{
+            console.log("Index out of range")
+        }
+    }   
+
+
+    for (const line of input) {
+        let [command, index, tankName] = line.split(', ');
+
+
+        if (command === 'Add') {
+            add(index);
+        }
+
+        else if (command === 'Insert') {
+            insert(index,tankName)
+
+        }
+        else if (command === 'Remove') {
+            remove(index)
+        }
+        else if (command === 'Remove At') {
+            removeAt(index)
+        }
+    }
+
+    console.log(firstLine.join(', '))
+    
+}
+
+//INPUTS--->>>
+solve([
+    'T-34-85 Rudy, SU-100Y, STG',
+    '3',
+    'Add, King Tiger(C)',
+    'Insert, 2, IS-2M',
+    'Remove, T-34-85 Rudy'
+  ])
+
+
+//   solve([
+//     'T 34, T 34 B, T92, AMX 13 57',
+//     '4',
+//     'Add, T 34',
+//     'Remove, AMX CDC',
+//     'Insert, 10, M60',
+//     'Remove At, 1'
+//   ])
