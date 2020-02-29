@@ -1,0 +1,75 @@
+function solve(input) {
+    input.pop()
+    let firstLine = input.shift().split(', ')
+
+    const collect = (name, item) => {
+        if (!firstLine.includes(item)) {
+
+            firstLine.push(item)
+        }
+
+    }
+
+    const drop = (name, item) => {
+        if (firstLine.includes(item)) {
+            let indexOfItem = firstLine.indexOf(item)
+            firstLine.splice(indexOfItem, 1)
+        }
+    }
+
+    const combineItems = (name, item) => {
+        let newArr = item.split(':')
+        let oldItem = newArr[0]
+        let newItem = newArr[1]
+
+        let foundIndex = firstLine.indexOf(oldItem) + 1
+        if (firstLine.includes(oldItem)) {
+            firstLine.splice(foundIndex,0,newItem)
+        }
+    }
+
+    let newArr = []
+    const renew = (name, item) => {
+        if (firstLine.includes(item)) {
+           
+            let indexOfItem = firstLine.indexOf(item)
+            firstLine.splice(indexOfItem,1)
+            firstLine.push(item)
+    
+        }
+    }
+
+    for (const line of input) {
+        let [command, item] = line.split(' - ');
+
+        if (command === 'Collect') {
+            collect(command, item);
+        }
+
+        else if (command === 'Drop') {
+            drop(command, item)
+        }
+        else if (command === 'Combine Items') {
+            combineItems(command, item)
+        }
+
+
+        else if (command === 'Renew') {
+            renew(command, item)
+        }
+    }
+    console.log(firstLine.join(', '))
+    
+}
+
+solve([
+    'Iron, Sword',
+    'Drop - Bronze',
+    'Combine Items - Sword:Bow',
+    'Renew - Iron',
+    'Craft!']
+)
+
+// solve(
+//     ['Iron, Wood, Sword', 'Collect - Gold', 'Drop - Wood', 'Craft!'])
+//
