@@ -1,0 +1,43 @@
+function solve(input) {
+    let firstInput = input.shift().split(' ')
+
+    let map = new Map();
+    let count = 0;
+
+    for (let i = 0; i < firstInput.length; i++) {
+        for (let j = 0; j < input.length; j++) {
+
+            if (firstInput[i] === (input[j])) {
+                count++
+            }
+        }
+        map.set(firstInput[i], count)
+        count = 0
+    }
+
+    let arr = Array.from(map.entries())
+        .sort((a,b) => b[1] - a[1]);
+   
+    for (let kvp of arr) {
+        let key = kvp[0]
+        let value = kvp[1]
+
+        console.log(`${key} - ${value}`)
+    }
+
+}
+
+solve([
+    'this sentence the', 'In',
+    'this', 'sentence',
+    'you', 'have',
+    'to', 'count',
+    'the', 'occurances',
+    'of', 'the',
+    'words', 'this',
+    'and', 'sentence',
+    'because', 'this',
+    'is', 'your',
+    'task', 'the', 'the', 'the'
+]
+)
