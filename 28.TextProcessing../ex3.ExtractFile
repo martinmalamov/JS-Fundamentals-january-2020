@@ -1,0 +1,12 @@
+function solve(input) {
+
+   input.split('\\')
+
+    let lastInd = input.lastIndexOf('.')
+    let fileName = input.substring(input.lastIndexOf('\\') + 1 , lastInd);
+    let fileExtension = input.substring(input.lastIndexOf('.') + 1);
+    console.log(`File name: ${fileName} \nFile extension: ${fileExtension}`);
+
+}
+
+solve('C:\\Internal\\training-internal\\Template.pptx')
