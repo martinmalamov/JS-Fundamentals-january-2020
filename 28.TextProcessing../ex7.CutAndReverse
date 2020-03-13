@@ -1,0 +1,36 @@
+function solve(input){
+    let leftCount = input.length / 2
+    
+    let leftPart = ''
+    let rightSide = ''
+
+    for (let i = 0; i < input.length; i++) {
+        if(i < leftCount){
+            leftPart += input[i]
+        }
+        else{
+            rightSide += input[i]
+        }    
+    }
+    leftPart =  leftPart.split('').reverse()
+    rightSide =  rightSide.split('').reverse()
+
+     let element = ''
+     let result = ''
+    for (let j = 0; j < leftPart.length; j++) {
+        element = leftPart[j].split(', ')
+        result +=element
+        
+    }
+    let rightResult = ''
+    for (let j = 0; j < rightSide.length; j++) {
+        element = rightSide[j].split(', ')
+        rightResult +=element
+        
+    }
+        
+    console.log(result)
+    console.log(rightResult)
+
+}
+solve('tluciffiDsIsihTgnizamAoSsIsihT')
