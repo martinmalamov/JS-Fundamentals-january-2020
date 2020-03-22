@@ -1,0 +1,20 @@
+function solve(furnitures){
+
+    //extract only CORRECT elements ( name , price , quantity)
+    let pattern = />>([A-Za-z]+)<<(\d+\.?\d+)!(\d+)/gm;
+    let lines = furnitures.slice(0,furnitures.indexOf('Purchase')).join('\n')
+    let arr = Array.from(lines.matchAll(pattern))
+
+    let names = 'Bought furniture:'
+    let cost = 0;
+
+    arr.forEach(match => {
+        names += '\n' + match[1]
+        cost  += Number(match[2])*Number(match[3])
+    })
+
+    return names + `\nTotal money spend: ${cost.toFixed(2)}`
+}
+console.log(
+solve([ '>>Sofa<<312.23!3', '>>TV<<300!5', '>Invalid<<!5', 'Purchase' ])
+)
