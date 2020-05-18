@@ -1,0 +1,25 @@
+function solve(number){
+    let input = Array.from(String(number), Number);
+    let numLength =  number.toString().length
+    let isTrue = false
+    let sum = 0
+    for (let i = 1; i <= numLength ;i++) {
+        if(input[i] === input[i-1] || input[i] === undefined){
+            isTrue = true;
+            sum+=Number(input[i-1])
+        }
+        else{
+            isTrue = false;
+            break;
+        }
+    }
+
+    if(isTrue === true){
+
+        console.log(isTrue+'\n' + sum)
+    }
+    else{
+        console.log(isTrue)
+    }
+}
+solve(11111)
