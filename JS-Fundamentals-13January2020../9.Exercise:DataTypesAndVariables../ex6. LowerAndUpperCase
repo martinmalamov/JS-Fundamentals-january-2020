@@ -1,9 +1,0 @@
-function lowUpperCase(input){
-         (input === input.toUpperCase())
-         ?  console.log("upper-case")
-         :  console.log("lower-case")
-
-    }
-lowUpperCase('L')
-lowUpperCase('f')
-lowUpperCase('fL')
