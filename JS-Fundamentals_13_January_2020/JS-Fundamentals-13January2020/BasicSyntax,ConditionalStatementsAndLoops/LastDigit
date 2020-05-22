@@ -1,0 +1,45 @@
+function lastDigit(test){
+         
+    var lastone = +test.toString().split('').pop();
+
+    switch(true){
+       
+                 case (lastone === 0): 
+                console.log('zero')           
+                break;
+
+            case (lastone === 1): 
+                console.log('one')           
+                break;
+             case (lastone === 2): 
+                console.log('two')           
+                break;
+                case (lastone === 4): 
+                console.log('four')           
+                break;
+                case (lastone === 3): 
+                console.log('three')           
+                break;
+
+                case (lastone === 5): 
+                console.log('five')           
+                break;
+
+                case (lastone === 6): 
+                console.log('six')           
+                break;
+
+                case (lastone === 7): 
+                console.log('seven')           
+                break;
+
+                case (lastone === 8): 
+                console.log('eight')           
+                break;
+
+                case (lastone === 9): 
+                console.log('nine')           
+                break;
+    }
+}
+lastDigit(1643)

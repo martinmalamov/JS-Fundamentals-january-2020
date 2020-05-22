@@ -1,0 +1,17 @@
+function decrease(array){
+    let firstElement = array[0]
+    let newRotateArray = []
+
+    for(let i = 0; i < array.length;i++){
+        if(array[i+1] > array[i]){
+        newRotateArray.push(array[i+1])
+    }
+}
+newRotateArray.unshift(firstElement)
+console.log(newRotateArray.join(' '))
+}
+
+decrease([ 1, 3, 8, 4, 10, 12, 3, 2, 24])
+decrease([ 1, 2, 3, 4])
+decrease([ 20, 3, 2, 15, 6, 1])
+

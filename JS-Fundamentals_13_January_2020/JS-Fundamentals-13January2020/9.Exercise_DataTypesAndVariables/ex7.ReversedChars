@@ -1,0 +1,9 @@
+function reversed(input1,input2,input3){
+    let result = input1 + input2 +  input3;
+    let reversedResult = result.split("").reverse().join(" ");
+
+    console.log(reversedResult)
+}
+reversed('A',
+'B',
+'C')

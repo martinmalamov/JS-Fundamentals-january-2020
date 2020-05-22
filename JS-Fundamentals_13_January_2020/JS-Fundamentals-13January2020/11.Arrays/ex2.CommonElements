@@ -1,0 +1,14 @@
+function elements(array1 , array2){
+    const intersection = 
+    array1.filter(element => array2.includes(element));
+    let str = '';
+    for(let i = 0 ; i<intersection.length ; i++){
+        str = intersection[i]
+
+        console.log(str);
+    }
+}
+elements(['Hey', 'hello', 2, 4, 'Peter', 'e'],
+['Petar', 10, 'hey', 4, 'hello', '2'],)
+elements(['S', 'o', 'f', 't', 'U', 'n', 'i', ' '],
+['s', 'o', 'c', 'i', 'a', 'l'])

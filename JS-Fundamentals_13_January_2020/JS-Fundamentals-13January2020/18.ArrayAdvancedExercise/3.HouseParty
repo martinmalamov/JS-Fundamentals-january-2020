@@ -1,0 +1,28 @@
+function solve(input) {
+    let name = '';
+    let array = []
+
+    for (let i = 0; i < input.length; i++) {
+        let command = input[i].split(' ');
+        name = command[0]
+        let isGoing = command.length;
+        if (isGoing == 3) {
+
+            array.push(name);
+        }
+        if (isGoing == 4) {
+ 
+        }
+    }
+
+return array.join(" ");
+}
+
+console.log(
+    solve(
+        ['Allie is going!',
+            'George is going!',
+            'John is not going!',
+            'George is not going!']
+    )
+)

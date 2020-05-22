@@ -1,0 +1,39 @@
+
+function solve(word, text) {
+    word.split(', ')
+    let symbol = ''
+    let countrer = 0
+
+    for (let i = 0; i < text.length; i++) {
+
+        let firstWord = word.split(', ')
+        let long = firstWord[countrer]
+        if(long === undefined)
+            {break;}
+        let finalWord = long.length;
+
+        if (text[i].includes('*')) {
+            let index = text.indexOf(text[i])
+            for (let j = index; j <= text.length; j++) {
+                symbol += '*'
+                if (symbol.length === finalWord) {
+
+                   text =  text.replace(symbol ,long)
+
+                    countrer++
+                    symbol = ''
+                    break;
+                }
+
+            }
+        }
+    }
+    console.log(text)
+}
+
+//INPUT
+solve('great',
+    'softuni is ***** place for learning new programming languages')
+
+solve('great, learning',
+    'softuni is ***** place for ******** new programming languages')

@@ -1,0 +1,29 @@
+function maxNumber(array){
+
+    let newArr = new Array()
+    let anotherArr = new Array()
+       for(let i= 0;i<array.length;i++){
+
+        for(let j = i;j< array.length;j++){
+            if(array[j] > array[i+1]){
+                if(array[j] > array[array.length-1]){
+
+                    anotherArr.push(array[j])
+                }
+            }
+        }
+    }       
+        if(array.length-1 > 0){
+                anotherArr.push(array[array.length-1])         
+        }
+        for(let b = 0;b < anotherArr.length;b++){
+            if(anotherArr[b] !== anotherArr[b+1]){              
+                newArr.push(anotherArr[b])
+            }   
+        }        
+        console.log(newArr.join(' '))
+    }
+maxNumber([1,4,3,2])
+maxNumber([14, 24, 3, 19, 15, 17])
+maxNumber([41, 41, 34, 20])
+maxNumber([27, 19, 42, 2, 13, 45, 48])

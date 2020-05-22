@@ -1,0 +1,29 @@
+function loadingBar(number){
+    let leftNumOfPercent = number / 10;
+    let sumOfPercent = 0;
+    let percentage = ''
+    
+    for(let i = 1 ; i <= leftNumOfPercent;i++){
+        percentage += '%';
+        sumOfPercent += 10;
+    }
+    
+    let points = ''
+    let sumOfThePoints = (100-number) / 10
+    for(let j = 1 ; j <= sumOfThePoints ;j++){
+        points += '.'
+    }
+    if(sumOfPercent < 100){
+
+        console.log(`${sumOfPercent}% ` + `[${percentage}` +`${points}]` )
+        console.log('Still loading...')
+    }
+    else{
+        console.log(`${sumOfPercent}% Complete!`)
+        console.log('[%%%%%%%%%]')
+
+    }
+}
+loadingBar(30)
+loadingBar(50)
+loadingBar(100)

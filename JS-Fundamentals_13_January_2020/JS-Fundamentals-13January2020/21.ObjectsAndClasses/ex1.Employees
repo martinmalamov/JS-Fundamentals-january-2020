@@ -1,0 +1,27 @@
+function solve(input) {
+    let str = ''
+    let counter = 0;
+
+    let array = []
+    for (let i = 0; i < input.length; i++) {
+        array.push(input[i])
+        for (let j = 0; j < array[i].length; j++) {
+            counter++
+        }
+        str = `Name: ${array[i]} -- Personal Number: ${counter}`
+        console.log(str)
+
+        counter = 0
+    }
+
+}
+
+solve(
+    [
+        'Silas Butler',
+        'Adnaan Buckley',
+        'Juan Peterson',
+        'Brendan Villarreal'
+    ]
+
+)

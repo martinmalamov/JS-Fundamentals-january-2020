@@ -1,0 +1,108 @@
+function solve(input) {
+    let message = input.shift()
+
+    const replace = (currentChar, newChar) => {
+        while (message.search(currentChar) !== -1) {
+            message = message.replace(currentChar, newChar)
+        }
+        console.log(message)
+    }
+    const make = (caseSensitive) => {
+        if (caseSensitive === "Upper") {
+            message = message.toUpperCase();
+        }
+        else {
+            message = message.toLowerCase();
+        }
+        console.log(message)
+    }
+
+    const check = (string) => {
+        if (message.includes(string)) {
+            console.log(`Message contains ${string}`)
+        }
+        else {
+            console.log(`Message doesn't contain ${string}`)
+
+        }
+    }
+
+    const sum = (startIndex, endIndex) => {
+        startIndex = Number(startIndex)
+        endIndex = Number(endIndex)
+        if (startIndex >= 0 && endIndex < message.length) {
+
+            let string = message.substring(startIndex, endIndex + 1)
+            let sum = 0
+            for (let k = 0; k < string.length; k++) {
+                let ascii = string.charCodeAt(k)
+                sum += ascii
+
+            }
+            console.log(sum)
+
+        }
+        else {
+            console.log("Invalid indexes!")
+        }
+    }
+
+    const cut = (startIndex, endIndex) => {
+        startIndex = Number(startIndex)
+        endIndex = Number(endIndex)
+        // message = message.replace(message.substring(startIndex + endIndex), ' ')
+        if (startIndex >= 0 && endIndex < message.length) {
+
+            message = message.substr(0, startIndex) + message.substr(endIndex + 1)
+            console.log(message)
+        }
+        else {
+            console.log("Invalid indexes!")
+        }
+
+
+    }
+
+    for (let i = 0; i < input.length; i++) {
+        let [command, firstCommand, secondCommand] = input[i].split(' ')
+
+        if (command === "Replace") {
+            replace(firstCommand, secondCommand)
+        }
+        if (command === "Cut") {
+            cut(firstCommand, secondCommand)
+        }
+        if (command === "Make") {
+            make(firstCommand)
+        }
+        if (command === "Check") {
+            check(firstCommand)
+        }
+        if (command === "Sum") {
+            sum(firstCommand, secondCommand)
+        }
+
+    }
+
+
+}
+solve([
+    'ILikeSharan',
+    'Replace a e',
+    'Make Upper',
+    'Check SHEREN',
+    'Sum 1 4',
+    'Cut 1 4',
+    'Finish'
+]
+)
+
+solve([
+    'HappyNameDay',
+    'Replace p r',
+    'Make Lower',
+    'Cut 2 23',
+    'Sum -2 2',
+    'Finish'
+]
+)

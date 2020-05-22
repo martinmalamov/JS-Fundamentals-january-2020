@@ -1,0 +1,48 @@
+function solve(input) {
+    let wagon = input.shift().split(' ').map(x => Number(x));
+    let maxCapacityOfWagon = + input.shift();
+    let counter = 0;
+    for (let i = 0; i < input.length; i++) {
+        let command = input[i].split(' ');
+        if (command.length === 2) {
+            wagon.push(Number(command[1]))
+
+        }
+        else if (command[0] != "Add") {
+            let passengersToAdd = Number(command[0])
+
+            for (let j = 0; j < wagon.length; j++) {
+                if(passengersToAdd+wagon[j] <=maxCapacityOfWagon){
+                    wagon[j] += passengersToAdd;
+                    break;
+                }
+
+            }
+        }
+    }
+    return wagon.join(" ");
+}
+
+
+console.log(
+    solve(['32 54 21 12 4 0 23',
+        '75',
+        'Add 10',
+        'Add 0',
+        '30',
+        '10',
+        '75']
+    )
+)
+console.log(
+    solve(['0 0 0 10 2 4',
+    '10',
+    'Add 10',
+    '10',
+    '10',
+    '10',
+    '8',
+    '6']
+
+    )
+)

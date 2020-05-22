@@ -1,0 +1,38 @@
+function solve(input) {
+
+    let result = ''
+    let element = ''
+    let capitalHolder = 0
+    let secondResult = ''
+
+
+    for (let i = 0; i < input.length; i++) {
+        capitalHolder = input[i]
+        element = input[i]
+        let maxLength  = input.length
+
+        if (input[i] === input[i].toUpperCase()) {
+            for (let j = i + 1; j <=input.length; j++) {
+                if(maxLength === j){
+                    result += capitalHolder 
+                    break;
+                } 
+
+                if (input[j] === input[j].toUpperCase()) {
+                    result += capitalHolder + ', '
+
+                    secondResult += element
+                   
+                    break;
+                }      
+                
+                capitalHolder += input[j]
+                element += input[j]
+            }
+        }
+
+    }
+    console.log(result)
+}
+solve('SplitMeIfYouCanHaHaYouCantOrYouCan')
+solve('HoldTheDoor')
