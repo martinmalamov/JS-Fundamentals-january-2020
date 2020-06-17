@@ -3,7 +3,7 @@ function solve(){
    const tbdoy = document.querySelector('tbody');
    const items = tbdoy.querySelectorAll('tr');
 
-   tbdoy.addEventListener('click', parseTable);
+   tbdoy.addEventListener('dblclick', parseTable);
 
    function parseTable(e){
       //намираме изнрания елемент
