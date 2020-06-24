@@ -9,7 +9,7 @@
 
 <body>
     <div id="wrapper">
-        <div id="titlebar">Bug tracker</div>
+        <div id="titlebar">Bug tracker <button onclick="change()">Change status</button></div>
         <div id="content">
             <div class="report">
                 <div class="body">
@@ -41,6 +41,24 @@
         </div>
     </div>
     <script src="./app.js"></script>
+    <script>
+        const bugTracker = solve();
+
+        bugTracker.output('#content')
+
+        bugTracker.report('Peter','I found this bug', true,  1)
+        // bugTracker.report('George','I found this bug', true, 2)
+        // bugTracker.report('John','I found this bug', false, 5)
+        // bugTracker.report('Marry','I found this bug', true, 3)
+
+        function change(){
+            bugTracker.setStatus(0, 'In progress')
+        }
+
+        // function remove(){
+        //     bugTracker.remove(0)
+        // }
+    </script>
 </body>
 
 </html>
