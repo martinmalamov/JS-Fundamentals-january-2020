@@ -93,6 +93,7 @@ class Article {
             }
         });
 
+        
         return result;
     }
 }
