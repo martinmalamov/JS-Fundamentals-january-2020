@@ -1,23 +1,24 @@
 function solve() {
 
-    const products = document.querySelectorAll('#adoption > ul')
+    const products = document.querySelectorAll('#adoption ul')[0]
     // const list = document.querySelector('#container');
     // let items = Array.from(list.querySelectorAll('input'))
 
     const form = document.querySelector('#add')
 
-    // const openDiv = document.querySelector('#adoption ul')
+    const openDiv = document.querySelectorAll('section')[0]
 
     let inputName = form[0];
     let inputAge = form[1];
     let inputKind = form[2];
     let inputOwner = form[3];
+    let butt = form[4];
     // let inputAge = items[1];
     // let inputKind = items[2];
     // let inputOwner = items[3];
     // let butt = document.querySelector('button')[4];
 
-    document.querySelector('button').addEventListener('click', addTask)
+    document.querySelector('#container button').addEventListener('click', addTask)
 
     function addTask(e) {
         e.preventDefault();
@@ -27,24 +28,23 @@ function solve() {
         let taskKind = inputKind.value
         let taskOwner = inputOwner.value
 
-
-
-        // const startBtn = el('button', 'Contact with owner', { className: 'adopting' });
+        const startBtn = el('button', 'Contact with owner', { className: 'adopting' });
 
         // const btnDiv = el('ul', [
         //     startBtn
         // ])
 
         const qtyStrong = el('strong', `${taskName}`)
-        const addBtn = el('button', `Contant owner`)
+        const addBtn = el('button', `Contact with owner`, qtyStrong)
 
-        const product = el('p', [
-            el('strong', `${taskName}`), 'is a ',
-            el('strong', `${taskAge}`), 'year old',
-            el('strong', `${taskKind}`),
-            el('span', `${taskOwner}`),
-            addBtn
-        ])
+        const product = el('li',
+            el('p', [
+                el('strong', `${taskName} is a `),
+                el('strong', `${taskAge} year old`),
+                el('strong', `${taskKind}`),
+
+            ],
+                el('span', `Owner: ${taskOwner}`, addBtn)))
 
         products.appendChild(product)
 

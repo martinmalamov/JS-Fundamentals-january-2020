@@ -232,36 +232,36 @@ class VeterinaryClinic {
         return `"${this.clinicName} is ${percentage}% busy today!" `
     }
 
-    withdrawMoney(personalId, amount) {
-        const customer = this.allCustomers.find(c => c.personalId === personalId)
+    // withdrawMoney(personalId, amount) {
+    //     const customer = this.allCustomers.find(c => c.personalId === personalId)
 
-        if (customer === undefined) {
-            throw new Error('We have no customer with this ID!')
-        } else if (customer.totalMoney < amount) {
-            throw new Error(`${customer.firstName} ${customer.lastName} does not have enough money to withdraw that amount!`)
-        } else {
-            customer.totalMoney -= amount
-            customer.transactions.unshift(`${customer.transactions.length + 1}. ${customer.firstName} ${customer.lastName} withdrew ${amount}$!`)
+    //     if (customer === undefined) {
+    //         throw new Error('We have no customer with this ID!')
+    //     } else if (customer.totalMoney < amount) {
+    //         throw new Error(`${customer.firstName} ${customer.lastName} does not have enough money to withdraw that amount!`)
+    //     } else {
+    //         customer.totalMoney -= amount
+    //         customer.transactions.unshift(`${customer.transactions.length + 1}. ${customer.firstName} ${customer.lastName} withdrew ${amount}$!`)
 
-            return `${customer.totalMoney}$`;
-        }
-    }
+    //         return `${customer.totalMoney}$`;
+    //     }
+    // }
 
-    customerInfo(personalId) {
-        const customer = this.allCustomers.find(c => c.personalId === personalId)
+    // customerInfo(personalId) {
+    //     const customer = this.allCustomers.find(c => c.personalId === personalId)
 
-        if (customer === undefined) {
-            throw new Error('We have no customer with this ID!')
-        } else {
-            return [
-                `Bank name: ${this._bankName}`,
-                `Customer name: ${customer.firstName} ${customer.lastName}`,
-                `Customer ID: ${personalId}`,
-                `Total Money: ${customer.totalMoney}$`,
-                'Transactions:'
-            ].concat(customer.transactions).join('\n')
-        }
-    }
+    //     if (customer === undefined) {
+    //         throw new Error('We have no customer with this ID!')
+    //     } else {
+    //         return [
+    //             `Bank name: ${this._bankName}`,
+    //             `Customer name: ${customer.firstName} ${customer.lastName}`,
+    //             `Customer ID: ${personalId}`,
+    //             `Total Money: ${customer.totalMoney}$`,
+    //             'Transactions:'
+    //         ].concat(customer.transactions).join('\n')
+    //     }
+    // }
 }
 
 
