@@ -15,7 +15,6 @@ window.addEventListener('load', async () => {
     // const authorInput = document.querySelector('#author');
     // const isbnInput = document.querySelector('#isbn');
     const createBtn = document.querySelector('form > button');
-
     createBtn.addEventListener('click', createBooks);
 
     async function createBooks(e) {

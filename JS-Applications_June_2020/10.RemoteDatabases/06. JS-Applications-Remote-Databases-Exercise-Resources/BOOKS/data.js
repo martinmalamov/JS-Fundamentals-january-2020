@@ -1,6 +1,6 @@
 
 const appId = '9A2B6B10-57D4-1943-FFED-497FC23A6800'
-const apiKey = '8D4E32F1-E6E4-4CB5-A826-EED20708AADF'
+const apiKey = '0BFE51EF-4300-451E-9357-9207DB28B3B0'
 
 function host(endpoint) {
     return `https://api.backendless.com/${appId}/${apiKey}/data/${endpoint}`
