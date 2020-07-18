@@ -73,7 +73,7 @@ window.addEventListener('load', async () => {
     function renderStudents(stud) {
         const deleteBtn = el('button', 'Delete')
         deleteBtn.addEventListener('click', deleteStudent)
-
+        
         const element = el('tr', [
             el('td', stud.ID),
             el('td', stud.FirstName),
@@ -101,3 +101,31 @@ window.addEventListener('load', async () => {
     }
 
 })
+
+
+// import * as methods from './dataaa.js'
+
+// const tableBody = document.getElementById("tbody");
+// const submitBtn = document.getElementById('submitButton');
+// submitBtn.addEventListener('click', methods.uploadData)
+
+// export function displayInfo() {
+//     tableBody.innerHTML = null;
+//     methods.getData()
+//         .then(res => res.json())
+//         .then(data => {
+//             let sortedData = data.sort((a, b) => Number(a.ID) - Number(b.ID ))
+//             sortedData.forEach(student => {
+//                 let tr = `    <tr>
+//             <th>${student.ID}</th>
+//             <th>${student.FirstName}</th>
+//             <th>${student.LastName}</th>
+//             <th>${student.FacultyNumbers}</th>
+//             <th>${student.Grade}</th>
+//         </tr>`;
+//                 tableBody.innerHTML += tr;
+
+//             })
+//         })
+// }
+// displayInfo()
