@@ -1,3 +1,12 @@
+//install json
+npm init -y
+
+//install handlebars
+npm i -E handlebars
+
+//install sammy.js
+npm i -E sammy
+
 //install on global 
 npm i -g lite-server
 
